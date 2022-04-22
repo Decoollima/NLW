@@ -23,7 +23,7 @@
           <img src="images/FotoAndré.png" alt="Foto pessoal" />
         </div>
 
-        <h1>André Lima</h1>
+        <h1 id="userName">André Lima</h1>
         <a href="https://github.com/Decoollima">
           <img src="images/github 2.svg" alt="Ícone Github" />
           decoollima</a
@@ -32,8 +32,8 @@
           A student focused on learning the Front-end and starting to program
           for the web
         </p>
-        <ul>
-          <li>
+        <ul id="socialLinks">
+          <li class="Youtube">
             <a
               href="https://www.youtube.com/channel/UCqx6JdmAvZLVwTRjheKLhHg/featured"
               target="_blank"
@@ -41,12 +41,12 @@
               <img src="images/youtube.svg" alt="Ícone Youtube" />
             </a>
           </li>
-          <li>
+          <li class="Instagram">
             <a href="https://www.instagram.com/decoo_llima/" target="_blank">
               <img src="images/instagram.svg" alt="Ícone Instagram" />
             </a>
           </li>
-          <li>
+          <li class="LinkedIn">
             <a
               href="https://www.linkedin.com/in/andr%C3%A9-luis-couto-de-lima-655831225/"
               target="_blank"
@@ -57,5 +57,23 @@
         </ul>
       </div>
     </main>
+    <script>
+      const links_social_media = {
+        github: 'Decoollima',
+        Youtube: 'UCqx6JdmAvZLVwTRjheKLhHg',
+        Instagram: 'decoo_llima',
+        LinkedIn: 'andré-lima-6558312255'
+      }
+
+      function change_social_media_links() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${links_social_media[social]}`
+          alert(li.children[0].href)
+        }
+      }
+      change_social_media_links()
+    </script>
   </body>
 </html>
